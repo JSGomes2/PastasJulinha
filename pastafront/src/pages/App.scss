@@ -1,0 +1,182 @@
+.pagina-inicio {
+      display: flex;
+        flex-direction: column;
+          align-items: center;
+            justify-content: center;
+              min-height: 100vh;
+                background-color: #fce4ec;
+
+                  .card {
+                      background-color: #ffffff;
+                          padding: 40px;
+                              border-radius: 10px;
+                                  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                                      display: flex;
+                                          flex-direction: column;
+                                              align-items: center;
+                                                  max-width: 400px;
+                                                      width: 100%;
+                                                        }
+
+                                                          h1 {
+                                                              color: #e91e63;
+                                                                  font-weight: bold;
+                                                                      margin-bottom: 30px;
+                                                                          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+                                                                            }
+
+                                                                              .campo {
+                                                                                  display: flex;
+                                                                                      flex-direction: column;
+                                                                                          align-items: flex-start;
+                                                                                              margin-bottom: 20px;
+                                                                                                  width: 100%;
+                                                                                                      max-width: 400px;
+
+                                                                                                          label {
+                                                                                                                font-size: 1.2rem;
+                                                                                                                      color: #880e4f;
+                                                                                                                            margin-bottom: 8px;
+                                                                                                                                }
+
+                                                                                                                                    input {
+                                                                                                                                          width: 90%;
+                                                                                                                                                padding: 10px;
+                                                                                                                                                      border-radius: 5px;
+                                                                                                                                                            border: 1px solid #f8bbd0;
+                                                                                                                                                                  background-color: #fce4ec;
+                                                                                                                                                                        font-size: 1rem;
+                                                                                                                                                                              color: #880e4f;
+
+                                                                                                                                                                                    &:focus {
+                                                                                                                                                                                            border-color: #e91e63;
+                                                                                                                                                                                                    box-shadow: 0 0 5px rgba(233, 30, 99, 0.4);
+                                                                                                                                                                                                          }
+                                                                                                                                                                                                              }
+                                                                                                                                                                                                                }
+
+                                                                                                                                                                                                                  button {
+                                                                                                                                                                                                                      background-color: red    ;
+                                                                                                                                                                                                                          color: white;
+                                                                                                                                                                                                                              padding: 12px 25px;
+                                                                                                                                                                                                                                  border: none;
+                                                                                                                                                                                                                                      border-radius: 25px;
+                                                                                                                                                                                                                                          font-size: 1.2rem;
+                                                                                                                                                                                                                                              cursor: pointer;
+                                                                                                                                                                                                                                                  transition: background-color 0.3s ease;
+                                                                                                                                                                                                                                                      margin-top: 20px;
+
+                                                                                                                                                                                                                                                          &:hover {
+                                                                                                                                                                                                                                                                background-color: #c2185b;
+                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                                                        @media (max-width: 768px) {
+                                                                                                                                                                                                                                                                            .card {
+                                                                                                                                                                                                                                                                                  padding: 20px;
+                                                                                                                                                                                                                                                                                      }
+
+                                                                                                                                                                                                                                                                                          .campo {
+                                                                                                                                                                                                                                                                                                width: 100%;
+                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                      }
+                                                                                                                                                                                                                                                                                                      }
+
+
+
+
+
+
+
+
+
+
+              
+                   
+                  
+                                         
+                            
+
+                                                         
+
+                                                                        try {
+                                                                                    let resp = await axios.post(url, usuario);
+                                                                                                if (resp.data.erro) {
+                                                                                                                alert(resp.data.erro);
+                                                                                                                            } else {
+                                                                                                                                            localStorage.setItem('USUARIO', resp.data.token);
+
+
+
+
+
+
+                                                                              
+                                                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                                                                                                                                                              
+                                                                                                                                                                        
+                                                                                                                                                                                } catch (error) {
+                                                                                                                                                                                            alert('Erro ao fazer login: ' + error.message);
+                                                                                                                                                                                                    }
+                                                                                                                                                                                                        }
+
+                                                                                                                                                                                                            return (
+                                                                                                                                                                                                                    <div className='pagina-inicio'>
+                                                                                                                                                                                                                                <h1> Seja Bem-Vinda </h1>
+
+                                                                                                                                                                                                                                            <div className='card'>
+                                                                                                                                                                                                                                                        <div className='campo'>
+                                                                                                                                                                                                                                                                        <label htmlFor='nome'>Nome</label>
+                                                                                                                                                                                                                                                                                        <input
+                                                                                                                                                                                                                                                                                                            id='nome'
+                                                                                                                                                                                                                                                                                                                                type='text'
+                                                                                                                                                                                                                                                                                                                                                    value={nome}
+                                                                                                                                                                                                                                                                                                                                                                        onChange={(e) => setNome(e.target.value)}
+                                                                                                                                                                                                                                                                                                                                                                                        />
+                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                <div className='campo'>
+                                                                                                                                                                                                                                                                                                                                                                                                                                <label htmlFor='senha'>Senha</label>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                <input
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    id='senha'
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        type='password' 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            value={senha}
+
+
+
+
+
+
+
+
+
+
+                                          l                   
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+
+
+
+
+
+
+
+                                                                              k                                                               
+
+                                                                              
+
+                                                                                                                                                                          
+                                                                                                                                                                                                                                                                                                                                                                                                                            
+
+                                                                              k                                                               
+
+
+
+                                                                                                                                                                                                                                                                                         <dv
+                                                                                                                                                                                                                                                                                         
+                                                                                                                                                                                                                                                                                                                                                   
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             <dv
+
+                                                          
+                                                                                                                                                                                                                                                                                                                                                                                                                                 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
